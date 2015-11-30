@@ -1,0 +1,34 @@
+3.1
+Write a program to prompt the user for hours and rate per hour using raw_input to compute gross pay. 
+Pay the hourly rate for the hours up to 40 and 1.5 times the hourly rate for all hours worked above 40 hours.
+
+hrs = raw_input("Enter Hours:")
+hours = float(hrs)
+rte = raw_input("Enter Rate:")
+rate = float(rte)
+if hours <= 40:
+    total = rate * hours
+else:
+    total = (hours - 40)*(1.5*rate) + (40 * rate)
+print total
+
+
+3.3
+Write a program to prompt for a score between 0.0 and 1.0. 
+If the score is out of range, print an error. 
+If the score is between 0.0 and 1.0, print a grade,
+
+grade = raw_input("Please enter numerical grade:")
+g = float(grade)
+if g > 1.0 or g < 0.0:
+    print "Error.  Value out of range."
+elif g >= 0.9:
+    print "A"
+elif g >= 0.8:
+    print "B"
+elif g >= 0.7:
+    print "C"
+elif g >= 0.6:
+    print "D"
+elif g < 0.6:
+    print "F"
