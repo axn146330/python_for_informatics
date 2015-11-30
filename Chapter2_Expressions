@@ -1,0 +1,20 @@
+2.2
+Write a program that uses raw_input to prompt a user for their name and then welcomes them. 
+Note that raw_input will pop up a dialog box.
+
+name = raw_input("Enter your name")
+print "Hello", name
+
+
+2.3
+Write a program to prompt the user for hours and rate per hour using raw_input to compute gross pay.
+
+hrs = raw_input("Enter Hours:")
+hours = float(hrs)
+rte = raw_input("Enter Rate:")
+rate = float(rte)
+total = hours*rate
+print total
+
+#We need floating point numbers to calculate gross pay.
+#The "raw_input" returns a string to us, so we must convert this to a float.
