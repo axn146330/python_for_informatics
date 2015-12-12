@@ -1,0 +1,25 @@
+The program will use urllib to read the HTML from the data files below, extract the href= vaues from the anchor tags, 
+scan for a tag that is in a particular position relative to the first name in the list, 
+follow that link and repeat the process a number of times and report the last name you find.
+
+import urllib
+from bs4 import *
+
+url = raw_input('Enter URL: ')
+count = int(raw_input('Enter count: '))
+position = int(raw_input('Enter position: ')) - 1
+
+counts = 0
+
+while counts < count:    
+    print "Retrieving:", url
+    html = urllib.urlopen(url).read()
+    soup = BeautifulSoup(html)
+    tags = soup('a')
+    lst = list()
+    for tag in tags:
+        t = tag.get('href', None)
+        lst.append(t)
+    url = lst[position] 
+    counts += 1
+print "Last URL:", url
